@@ -1,9 +1,7 @@
 import React from 'react';
 
-const Thumb = ({Thumb}) => {
-  return (
-    <Thumb/>
-  )
-}
+const Thumb = ({Thumb}) => (
+   <Thumb/>
+ )
 
 export default Thumb;
