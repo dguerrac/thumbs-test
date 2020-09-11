@@ -8,7 +8,6 @@ import './Navbar.scss';
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
-  console.log(showNav);
   const width = useWindowWidth();
 
   const handleShowNav = () => setShowNav(!showNav);

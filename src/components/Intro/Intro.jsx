@@ -1,5 +1,7 @@
 import React from 'react';
+import Thumb from '../Thumb/Thumb';
 import { ImWikipedia } from 'react-icons/im';
+import { HiThumbUp, HiThumbDown } from 'react-icons/hi';
 import './Intro.scss';
 
 const Intro = () => {
@@ -17,10 +19,10 @@ const Intro = () => {
 		  </div>
 		  <div className={'thumbs'}>
 		  	<div className={'thumbs__up'}>
-		  		
+		  		<Thumb Thumb={HiThumbUp}/>	
 		  	</div>
 		  	<div className={'thumbs__down'}>
-		  		
+		  		<Thumb Thumb={HiThumbDown}/>	
 		  	</div>	
 		  </div>
     </section>
