@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../../components/Hero/Hero';
 
-const Home = (props) => {
+const Home = () => {
   return (
     <Hero />
   )
