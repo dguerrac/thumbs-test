@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 import Layout from '../Layout/Layout';
 import UnderConstruction from '../../views/UnderConstruction/UnderConstruction';
+import Home from '../../views/Home/Home';
+
 import './App.scss';
 
 const App = () => {
@@ -13,7 +15,7 @@ const App = () => {
     <Router>
       <Layout>
         <Switch>
-          <Route exact path={'/'} component={''} />
+          <Route exact path={'/'} component={Home} />
           <Route exact path={'/past-trials'}>
             <UnderConstruction title={'Past trials'}/>
           </Route>
