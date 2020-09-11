@@ -58,6 +58,9 @@
 			transform: translateX(100%);
     	transition: transform 500ms;
 		}
+		@media (max-width: 576px) {
+			width: 40%;		
+		}
 		&_button {
 			color: #fff;
 			font-size: 22px;

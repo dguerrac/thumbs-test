@@ -6,6 +6,17 @@
 	color: #fff;
 	max-width: 500px;
 	margin-left: 150px;
+	@media (max-width: 767px) {
+		width: 320px;
+		margin-left: 0;
+	}
+	@media (max-width: 414px) {
+		margin-top: 100px;	
+	}
+	@media (max-width: 320px) {
+		width: 300px;
+		margin-top: 180px;	
+	}
 	&__question {
 		font-size: 12px;
 	}
@@ -41,6 +52,13 @@
 	display: flex;
 	max-width: 500px;
 	margin-left: 150px;
+	@media (max-width: 767px) {
+		width: 320px;
+		margin-left: 0;
+	}
+	@media (max-width: 320px) {
+		width: 300px;
+	}
 	&__up {
 		width: 50%;
 		background-color: rgba(28, 187, 180, 0.9);

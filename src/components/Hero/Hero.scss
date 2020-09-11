@@ -7,4 +7,10 @@
 	height: 100vh;
 	background-image: url('../../assets/images/pope.jpg');
 	background-size: cover;
+	@media (max-width: 1024px) {
+		background-position: center;
+	}
+	@media (max-width: 767px) {
+		justify-content: center;
+	}
 }
