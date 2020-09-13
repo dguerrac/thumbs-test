@@ -1,0 +1,24 @@
+.button {
+  padding: 10px 25px;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 400;
+  &--vote {
+    color: #fff;
+    border: 1px solid #fff;
+    transition: background 0.25s;
+    &:hover {
+      background: #fff;
+      color: #333; 
+    }
+  }
+  &--new {
+    color: #333;
+    border: 3px solid #333;
+    transition: background 0.25s;
+    &:hover {
+      background: #333;
+      color: #fff;
+    }
+  }
+}  

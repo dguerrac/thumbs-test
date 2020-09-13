@@ -1,6 +1,8 @@
 import React from 'react';
 import Hero from '../../components/Hero/Hero';
 import Description from '../../components/Description/Description';
+import RulingsList from '../../components/RulingsList/RulingsList';
+
 import './Home.scss';
 
 const Home = () => {
@@ -8,7 +10,8 @@ const Home = () => {
   	<>
 		  <Hero />
 		  <section className={'rulings-container'}>
-		  	<Description />	
+		  	<Description />
+		  	<RulingsList />	
 		  </section>
     </>
   );
