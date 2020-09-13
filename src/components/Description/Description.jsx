@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RiCloseLine } from 'react-icons/ri';
 import './Description.scss';
 
 const Description = () => {
+	const [showDescription, setShowDescription] = useState(false);
+
+	if (showDescription) return null;
   return (
     <section className={'description-container'}>
     	<div className={'description-container__content'}>
@@ -16,9 +19,9 @@ const Description = () => {
     			</p>
     		</div>	
     	</div>
-  		<button><RiCloseLine/></button>	
+  		<button onClick={() => setShowDescription(!showDescription)}><RiCloseLine/></button>	
     </section>
-  )
+  );
 }
 
 export default Description;
