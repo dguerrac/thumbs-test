@@ -1,15 +1,13 @@
 import React from 'react';
-import Button from '../Button/Button';
+import { rulingsList } from '../../utils/rulingsList';
 
 import './RulingsList.scss';
 
 const RulingsList = () => {
+
   return (
     <section className={'rulings-list-container'}>
     	<h2>Previous Rulings</h2>
-    	<Button category={'new'}>
-    		Vote now
-    	</Button>
     </section>
   )
 }
