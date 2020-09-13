@@ -10,7 +10,7 @@
     align-items: center;
 		position: relative;
 		background-color: rgba(0, 0, 0, 0.3);
-		width: 40%;
+		min-width: 112px !important;
 		padding-right: 20px;
 		&:after {
 			position: absolute;
@@ -31,7 +31,28 @@
 		}
 	}
 	&__timer {
+		display: flex;
+		align-items: center;
 		background-color: hsla(0, 0%, 100%, 0.7);
-		width: 60%;
+		min-width: 115px !important;
+		padding-left: 20px;
+		font-size: 37px;
+		span {
+			margin: 0 5px;
+			font-weight: lighter;
+		}
+	}
+	&__time-up {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+		p {
+			margin-top: 5px;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 24px;
+		}
 	}
 }
