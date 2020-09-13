@@ -1,0 +1,113 @@
+@mixin thumb-styles ($display, $justify, $align, $width, $background, $padding, $hover, $cursor) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+  width: $width;
+  background-color: $background;
+  padding: $padding;
+  cursor: $cursor;
+  &:hover {
+  	background-color: $hover;
+  }
+}
+
+.intro-container {
+	background-color: rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(10px);
+	padding: 30px 60px 30px 30px;
+	color: #fff;
+	max-width: 500px;
+	margin-left: 150px;
+	@media (max-width: 767px) {
+		margin-left: 0;
+	}
+	@media (max-width: 576px) {
+		width: 420px;
+	}
+	@media (max-width: 465px) {
+		width: 320px;
+	}
+	@media (max-width: 414px) {
+		padding: 20px 40px 20px 20px;
+		margin-top: 50px;	
+	}
+	@media (max-width: 320px) {
+		width: 300px;
+		margin-top: 40px;	
+	}
+	&__question {
+		font-size: 12px;
+	}
+	h2 {
+		font-size: 60px;
+		line-height: 60px;
+		font-weight: 400;
+		margin-top: 5px;
+		margin-bottom: 25px;
+		@media (max-width: 414px) {
+			margin-top: 10px;
+			font-size: 50px;
+			line-height: 45px;
+		}
+		@media (max-width: 360px) {
+			margin-top: 20px;
+			font-size: 35px;
+			line-height: 30px;
+		}
+	}
+	&__description {
+		font-size: 20px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    @media (max-width: 320px) {
+    	font-size: 16px;
+    }
+	}
+	&__more {
+		display: flex;
+		margin-bottom: 32px;
+		@media (max-width: 320px) {
+			margin-bottom: 20px;
+		}
+		a {
+			font-size: 14px;
+			font-weight: lighter;
+			text-decoration: underline;
+			margin-left: 4px;
+		}
+	}
+	&__veredict {
+		font-size: 20px;
+		@media (max-width: 320px) {
+			font-size: 16px;
+		}
+	}
+}
+
+.thumbs {
+	display: flex;
+	max-width: 500px;
+	margin-left: 150px;
+	color: #fff;
+	font-size: 42px;
+	@media (max-width: 767px) {
+		margin-left: 0;
+	}
+	@media (max-width: 576px) {
+		width: 420px;
+	}
+	@media (max-width: 465px) {
+		width: 320px;
+	}
+	@media (max-width: 320px) {
+		width: 300px;
+	}
+	&__up {
+		@include thumb-styles (flex, center, center, 50%, rgba(28, 187, 180, 0.9), 15px 0, rgba(28, 187, 180, 1), pointer);
+	}
+	&__down {
+		@include thumb-styles (flex, center, center, 50%, rgba(255, 172, 29, 0.9), 15px 0, rgba(255, 172, 29, 1), pointer);
+	}
+}

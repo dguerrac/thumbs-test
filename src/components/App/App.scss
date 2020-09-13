@@ -16,6 +16,24 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: 'LatoW';
+  src: url(../../assets/fonts/Lato-Light.svg) format('truetype');
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: 'LatoW';
+  src: url(../../assets/fonts/Lato-Regular.svg) format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'LatoW';
+  src: url(../../assets/fonts/Lato-Bold.svg) format('truetype');
+  font-weight: bold;
+}
+
 body {
 	color: #333;
 }
@@ -25,7 +43,7 @@ body,
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato', 'Lucida Sans', 'Verdana', sans-serif;
+  font-family: 'LatoW', 'Helvetica Neue', 'helvetica', 'arial', 'Lucida Grande', sans-serif;
 }
 
 a {
