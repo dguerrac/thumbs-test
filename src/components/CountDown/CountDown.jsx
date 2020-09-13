@@ -35,7 +35,6 @@ const CountDown = () => {
 
   const remaining = (timeLeft.remainTime * 100) / totalTime;
   const lapsed = ((totalTime - timeLeft.remainTime) * 100) / totalTime;
-  console.log(remaining, lapsed)
 
   return (
     <div className={'countdown-container'}>
