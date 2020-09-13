@@ -4,7 +4,7 @@
 <br/>
   <img width="200" height="200" src="./src/logo.svg"><br/>
 <br/>
-In this project, I will use my knowledge in React to get a job.
+Hello World, in this project, I will use my knowledge in React to get a job.
 <br/>
 </p>
 <br/>
