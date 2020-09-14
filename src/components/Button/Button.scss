@@ -1,9 +1,10 @@
 .button {
-  padding: 10px 25px;
+  padding: 0 25px;
   background: transparent;
   font-size: 18px;
   font-weight: 400;
   &--vote {
+    height: 45px;
     color: #fff;
     border: 1px solid #fff;
     transition: background 0.25s;

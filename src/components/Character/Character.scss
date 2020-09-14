@@ -1,4 +1,5 @@
 .character-container {
+	position: relative;
 	background-size: cover;
 	background-position: center;
 	flex: 0 1 47%;
@@ -8,5 +9,73 @@
 	@media (max-width: 1024px) {
 		width: 100%;
 		margin: 10px 0;
+	}
+	&__content {
+		position: absolute;
+    background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.9));
+    bottom: 0;
+    width: 100%;
+    padding: 0 35px;
+    z-index: 1;
+    .title {
+    	display: flex;
+    	align-items: center;
+    	div {
+    		position: absolute;
+    		left: 0;
+    		display: flex;
+    		justify-content: center;
+    		align-items: center;
+    		width: 32px;
+    		height: 32px;
+    		padding: 2px;
+    		margin-top: -10px;
+    		font-size: 32px;
+    		color: #fff;
+    		background-color: rgb(255, 172, 29);
+    	}
+    	h2 {
+    		font-size: 45px;
+		    line-height: 45px;
+		    font-weight: 400;
+		    color: #fff;
+    	}
+    }
+    .body {
+    	p {
+    		color: #fff;
+    		font-size: 16px;
+    		margin-bottom: 12px;
+    	}
+    	&__vote {
+    		display: flex;
+    		align-items: center;
+    		color: #fff;
+    		&_thumbs {
+    			display: flex;
+    			justify-content: center;
+    			align-items: center;
+    			font-size: 32px;
+    			width: 36px;
+    			height: 36px;
+    			border: 2px solid transparent;
+    			margin: 12px 6px;
+    			cursor: pointer;
+    			color: inherit;
+    			&:hover {
+    			  outline: 2px solid #fff; 
+    			}
+    			&--0 {
+    				background-color: rgb(28, 187, 180);
+    			}
+    			&--1 {
+    				background-color: rgb(255, 172, 29);
+    			}
+    		}
+    		.button-vote {
+    			margin-left: 10px;
+    		}
+    	}
+    }
 	}
 }
