@@ -1,0 +1,30 @@
+.button {
+  padding: 0 25px;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 400;
+  @media (max-width: 360px) {
+    font-size: 14px;
+    width: 95px;
+    padding: 0 15px;
+  }
+  &--vote {
+    height: 45px;
+    color: #fff;
+    border: 1px solid #fff;
+    transition: background 0.25s;
+    &:hover {
+      background: #fff;
+      color: #333; 
+    }
+  }
+  &--new {
+    color: #333;
+    border: 3px solid #333;
+    transition: background 0.25s;
+    &:hover {
+      background: #333;
+      color: #fff;
+    }
+  }
+}  

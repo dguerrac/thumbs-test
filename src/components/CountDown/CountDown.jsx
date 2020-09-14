@@ -5,6 +5,7 @@ const CountDown = () => {
 
   const getRemainTime = () => {
     let now = new Date(),
+      firstRemainTime = (new Date('Oct 13 2020 21:00:00 GMT-0500') - new Date('Sep 13 2020 21:00:00 GMT-0500') + 1000) / 1000,
       remainTime = (new Date('Oct 12 2020 21:00:00 GMT-0500') - now + 1000) / 1000,
       remainSeconds = ("0" + Math.floor(remainTime % 60)).slice(-2), 
       remainMinutes = ("0" + Math.floor(remainTime / 60 % 60)).slice(-2),
@@ -12,6 +13,7 @@ const CountDown = () => {
       remainDays = Math.floor(remainTime / (3600 * 24));
 
     return {
+      firstRemainTime,
       remainTime,
       remainSeconds,
       remainMinutes,
@@ -21,7 +23,6 @@ const CountDown = () => {
   }
 
   const [timeLeft, setTimeLeft] = useState(getRemainTime());
-  const totalTime = 2592000;
 
   useEffect(() => {
     const timerUpDate = setTimeout(() => {
@@ -33,8 +34,8 @@ const CountDown = () => {
     return () => clearTimeout(timerUpDate);
   });
 
-  const remaining = (timeLeft.remainTime * 100) / totalTime;
-  const lapsed = ((totalTime - timeLeft.remainTime) * 100) / totalTime;
+  const remaining = (timeLeft.remainTime * 100) / timeLeft.firstRemainTime;
+  const lapsed = ((timeLeft.firstRemainTime - timeLeft.remainTime) * 100) / timeLeft.firstRemainTime;
 
   return (
     <div className={'countdown-container'}>
