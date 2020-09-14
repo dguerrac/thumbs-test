@@ -3,6 +3,11 @@
   background: transparent;
   font-size: 18px;
   font-weight: 400;
+  @media (max-width: 360px) {
+    font-size: 14px;
+    width: 95px;
+    padding: 0 15px;
+  }
   &--vote {
     height: 45px;
     color: #fff;
