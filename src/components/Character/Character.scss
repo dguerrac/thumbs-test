@@ -1,0 +1,12 @@
+.character-container {
+	background-size: cover;
+	background-position: center;
+	flex: 0 1 47%;
+	max-width: 530px;
+	min-height: 540px;
+	margin: 25px 5px;
+	@media (max-width: 1024px) {
+		width: 100%;
+		margin: 10px 0;
+	}
+}
