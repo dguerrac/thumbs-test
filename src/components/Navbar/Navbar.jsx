@@ -15,7 +15,7 @@ const Navbar = () => {
     <header className={'header'}>
       <div className={'header__title'}>
         <h1>
-          <NavLink to={'/'} activeClassName={'selected'} onClick={handleShowNav}>
+          <NavLink to={'/'} activeClassName={'selected'} onClick={() => setShowNav(false)}>
             Rule of Thumb
           </NavLink>  
         </h1>
