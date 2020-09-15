@@ -6,17 +6,15 @@ import AddNewPerson from '../../components/AddNewPerson/AddNewPerson';
 
 import './Home.scss';
 
-const Home = () => {
-  return (
-  	<>
-		  <Hero />
-		  <section className={'rulings-container'}>
-		  	<Description />
-		  	<RulingsList />
-		  	<AddNewPerson />				
-		  </section>
-    </>
-  );
-}
+const Home = () => (
+	<>
+	  <Hero />
+	  <section className={'rulings-container'}>
+	  	<Description />
+	  	<RulingsList />
+	  	<AddNewPerson />				
+	  </section>
+  </>
+);
 
 export default Home;
