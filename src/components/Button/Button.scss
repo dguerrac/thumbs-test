@@ -5,7 +5,7 @@
   font-weight: 400;
   @media (max-width: 360px) {
     font-size: 14px;
-    width: 95px;
+    width: 120px;
     padding: 0 15px;
   }
   &--vote {
@@ -22,6 +22,9 @@
     color: #333;
     border: 3px solid #333;
     transition: background 0.25s;
+    @media (max-width: 360px) {
+      width: 180px;
+    }
     &:hover {
       background: #333;
       color: #fff;
