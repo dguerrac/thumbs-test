@@ -1,0 +1,35 @@
+.add-new-person-container {
+	width: 100%;
+	margin-top: 10px;
+	background-image: url('../../assets/images/crowd.jpg');
+	background-size: cover;
+	background-position: center;
+	&__crowd {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: hsla(0, 0%, 100%, 0.8);
+		min-height: 80px;
+		padding: 0 20px;
+		@media (max-width: 1058px) {
+			flex-direction: column;
+			padding: 20px 0;
+		}
+		.question {
+			@media (max-width: 1058px) {
+				margin-bottom: 10px;
+			}
+			p {
+				font-size: 30px;
+				font-weight: lighter;
+				text-align: center;
+				@media (max-width: 375px) {
+					font-size: 24px;
+				}
+			}
+		}
+		.new-person {
+			padding: 10px 30px;
+		}
+	}
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { rulingsList } from '../../utils/rulingsList';
 import Character from '../Character/Character';
 import { ToastContainer } from "react-toastify";
@@ -6,8 +6,12 @@ import { ToastContainer } from "react-toastify";
 import './RulingsList.scss';
 
 const RulingsList = () => {
-	const [data, setData] = useState(rulingsList);
-	console.log(data);
+	const [data, setData] = useState(() =>
+      JSON.parse(localStorage.getItem('rulingsList')) || rulingsList
+    );
+  useEffect(() => {
+    localStorage.setItem('rulingsList', JSON.stringify(data))
+  }, [data])
 
 	const handleUpdateData = (id, thumb) => {
     

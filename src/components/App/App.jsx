@@ -10,25 +10,32 @@ import Home from '../../views/Home/Home';
 
 import './App.scss';
 
-const App = () => {
-  return (
-    <Router>
-      <Layout>
-        <Switch>
-          <Route exact path={'/'} component={Home} />
-          <Route exact path={'/past-trials'}>
-            <UnderConstruction title={'Past trials'}/>
-          </Route>
-          <Route exact path={'/how-it-works'}>
-            <UnderConstruction title={'How it works'}/>
-          </Route>
-          <Route exact path={'/login'}>
-            <UnderConstruction title={'Login'}/>
-          </Route>
-        </Switch>
-      </Layout>
-    </Router>
-  );
-}
+const App = () => (
+  <Router>
+    <Layout>
+      <Switch>
+        <Route exact path={'/'} component={Home} />
+        <Route exact path={'/past-trials'}>
+          <UnderConstruction title={'Past trials'}/>
+        </Route>
+        <Route exact path={'/how-it-works'}>
+          <UnderConstruction title={'How it works'}/>
+        </Route>
+        <Route exact path={'/login'}>
+          <UnderConstruction title={'Login'}/>
+        </Route>
+        <Route exact path={'/terms-and-conditions'}>
+          <UnderConstruction title={'Terms and conditions'}/>
+        </Route>
+        <Route exact path={'/privacy-policy'}>
+          <UnderConstruction title={'Privacy policy'}/>
+        </Route>
+        <Route exact path={'/contact-us'}>
+          <UnderConstruction title={'Contact us'}/>
+        </Route>
+      </Switch>
+    </Layout>
+  </Router>
+);
 
 export default App;

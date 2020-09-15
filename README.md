@@ -25,4 +25,8 @@ $ yarn install
 $ yarn start
 ```
 
-go to [http://localhost:8000](http://localhost:8000) in your browser.
+go to [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Demo
+
+go to [https://flamboyant-varahamihira-83b005.netlify.app/](https://flamboyant-varahamihira-83b005.netlify.app/) in your browser.
