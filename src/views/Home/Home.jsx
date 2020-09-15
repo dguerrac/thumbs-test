@@ -13,7 +13,7 @@ const Home = () => {
 		  <section className={'rulings-container'}>
 		  	<Description />
 		  	<RulingsList />
-		  	<AddNewPerson />		
+		  	<AddNewPerson />				
 		  </section>
     </>
   );
