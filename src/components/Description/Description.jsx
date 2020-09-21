@@ -19,7 +19,7 @@ const Description = () => {
     			</p>
     		</div>	
     	</div>
-  		<button onClick={() => setShowDescription(!showDescription)}><RiCloseLine/></button>	
+  		<button ariaLabel={'close description'} onClick={() => setShowDescription(!showDescription)}><RiCloseLine/></button>	
     </section>
   );
 }

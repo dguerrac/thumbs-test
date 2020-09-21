@@ -9,9 +9,23 @@ const RulingsList = () => {
 	const [data, setData] = useState(() =>
       JSON.parse(localStorage.getItem('rulingsList')) || rulingsList
     );
+  const [filtered, setFiltered] = useState([]);
+  const [query, setQuery] = useState('');
+
   useEffect(() => {
     localStorage.setItem('rulingsList', JSON.stringify(data))
-  }, [data])
+  }, [data]);
+
+  useEffect(() => {
+    let temporal = data;
+    if (!!query) {
+      temporal = data.filter(person => {
+        const { name } = { ...person };
+        return `${name}`.toLowerCase().includes(query.toLowerCase());
+    });
+    }
+    setFiltered(temporal);
+  }, [data, query]);
 
 	const handleUpdateData = (id, thumb) => {
     
@@ -28,9 +42,19 @@ const RulingsList = () => {
 
   return (
     <section className={'rulings-list-container'}>
-    	<h2>Previous Rulings</h2>
+      <div className={'rulings-list-container__search'}>
+        <label htmlFor={'search'} className={'rulings-list-container__search_label'}>Previous Rulings</label>
+        <input
+          className={'rulings-list-container__search_input'}
+          id={'search'}
+          type={'text'}
+          onChange={e => setQuery(e.target.value)}
+          value={query}
+          placeholder={'Search a person...'}
+        />
+      </div>
     	<div className={'rulings-list-container__list'}>
-    		{(data || []).map((character, index) => {
+    		{(filtered || []).map((character, index) => {
     			return (
     				<Character key={index} character={character} handleUpdateData={handleUpdateData}/>
     			)
