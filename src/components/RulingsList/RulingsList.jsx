@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { rulingsList } from '../../utils/rulingsList';
 import Character from '../Character/Character';
 import { ToastContainer } from "react-toastify";
+import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai';
 
 import './RulingsList.scss';
 
@@ -40,6 +41,8 @@ const RulingsList = () => {
     setData(characters);
   }
 
+  const handleCleanInput = () => query ? setQuery('') : null;
+
   return (
     <section className={'rulings-list-container'}>
       <div className={'rulings-list-container__search'}>
@@ -52,6 +55,14 @@ const RulingsList = () => {
           value={query}
           placeholder={'Search a person...'}
         />
+        <div 
+          role={'button'} 
+          tabIndex={0}
+          className={'rulings-list-container__search_icon'}
+          onClick={handleCleanInput}
+        >
+          {query ? <AiOutlineClose/> : <AiOutlineSearch/>}
+        </div>
       </div>
     	<div className={'rulings-list-container__list'}>
     		{(filtered || []).map((character, index) => {

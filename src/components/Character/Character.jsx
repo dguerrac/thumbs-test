@@ -68,7 +68,7 @@ const Character = ({character, handleUpdateData}) => {
     					return (
     						<button 
     							key={index} 
-                  ariaLabel={'thumb'}
+                  aria-label={'thumb'}
     							className={`body__vote_thumbs body__vote_thumbs--${index} ${tab === index && 'active-thumb'}`} 
     							onClick={() => setTab(index)}
     						>
