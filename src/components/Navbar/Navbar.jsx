@@ -20,14 +20,14 @@ const Navbar = () => {
           </NavLink>  
         </h1>
         {width < 768 && (
-          <button className={'header__title_button'} onClick={handleShowNav}>
+          <button ariaLabel={'menu hamburguer'} className={'header__title_button'} onClick={handleShowNav}>
             <AiOutlineMenu/>
           </button>
         )}
       </div>
       <nav className={`header__nav ${showNav && 'show-nav'}`}>
         { width < 768 && (
-          <button className={'header__nav_button'} onClick={handleShowNav}>
+          <button ariaLabel={'close nav'} className={'header__nav_button'} onClick={handleShowNav}>
             <FiChevronRight/>
           </button>
         )}
