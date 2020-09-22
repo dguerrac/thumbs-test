@@ -48,4 +48,8 @@
     	align-items: center;
     }
 	}
+	&__empty-list {
+		display: grid;
+		place-items: center;
+	}
 }

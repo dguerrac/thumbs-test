@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { rulingsList } from '../../utils/rulingsList';
 import Character from '../Character/Character';
+import NotFound from '../NotFound/NotFound';
 import { ToastContainer } from "react-toastify";
 import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai';
 
@@ -64,13 +65,18 @@ const RulingsList = () => {
           {query ? <AiOutlineClose/> : <AiOutlineSearch/>}
         </div>
       </div>
-    	<div className={'rulings-list-container__list'}>
-    		{(filtered || []).map((character, index) => {
-    			return (
-    				<Character key={index} character={character} handleUpdateData={handleUpdateData}/>
-    			)
-    		})}	
-    	</div>
+      {filtered.length === 0 ? 
+        <div className={'rulings-list-container__empty-list'}>
+          <NotFound/>    
+        </div> : 
+        <div className={'rulings-list-container__list'}>
+          {(filtered || []).map((character, index) => {
+            return (
+              <Character key={index} character={character} handleUpdateData={handleUpdateData}/>
+            )
+          })} 
+        </div>
+      }
     	<ToastContainer/>
     </section>
   )

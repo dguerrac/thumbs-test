@@ -8,7 +8,7 @@ const AddNewPerson = () => (
   		<div className={'question'}>
   			<p>Is there anyone else you would want us to add?</p>
   		</div>
-  		<Button category={'new'} className={'new-person'}>
+  		<Button category={'new'}>
   			Submit a Name
   		</Button>
   	</div>
