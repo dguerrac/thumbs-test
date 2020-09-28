@@ -13,15 +13,24 @@
 	@media (max-width: 1024px) {
 		width: 100%;
 	}
+	@media (max-width: 576px) {
+		padding: 20px 30px;
+	}
 	&__message {
 		color: #fff;
 		font-size: 40px;
 		text-align: center;
+		@media (max-width: 576px) {
+			font-size: 35px;
+		}
 	}
 	&__add {
 		font-size: 30px;
 		font-weight: lighter;
 		text-align: center;
+		@media (max-width: 576px) {
+			font-size: 26px;
+		}
 		p {
 			margin-bottom: 10px;
 		}

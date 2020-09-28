@@ -57,7 +57,8 @@ const RulingsList = () => {
           placeholder={'Search a person...'}
         />
         <div 
-          role={'button'} 
+          role={'button'}
+          aria-label={'search-close'}
           tabIndex={0}
           className={'rulings-list-container__search_icon'}
           onClick={handleCleanInput}

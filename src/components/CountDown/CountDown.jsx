@@ -6,7 +6,7 @@ const CountDown = () => {
   const getRemainTime = () => {
     let now = new Date(),
       firstRemainTime = (new Date('Oct 13 2020 21:00:00 GMT-0500') - new Date('Sep 13 2020 21:00:00 GMT-0500') + 1000) / 1000,
-      remainTime = (new Date('Oct 12 2020 21:00:00 GMT-0500') - now + 1000) / 1000,
+      remainTime = (new Date('Oct 13 2020 21:00:00 GMT-0500') - now + 1000) / 1000,
       remainSeconds = ("0" + Math.floor(remainTime % 60)).slice(-2), 
       remainMinutes = ("0" + Math.floor(remainTime / 60 % 60)).slice(-2),
       remainHours = ("0" + Math.floor(remainTime / 3600 % 24)).slice(-2),
