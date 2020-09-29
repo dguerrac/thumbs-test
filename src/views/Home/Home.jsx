@@ -9,10 +9,10 @@ import './Home.scss';
 const Home = () => (
 	<>
 	  <Hero />
-	  <section className={'rulings-container'}>
+	  <section className={'home-container'}>
 	  	<Description />
 	  	<RulingsList />
-	  	<AddNewPerson />				
+	  	<AddNewPerson />						
 	  </section>
   </>
 );

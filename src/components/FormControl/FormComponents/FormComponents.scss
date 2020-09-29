@@ -1,0 +1,33 @@
+.input-container {
+	margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+	font-weight: bold;
+	color: #fff;
+	&__label {
+		margin-bottom: 5px;
+	}
+	&__input {
+		width: 100%;
+		margin-bottom: 5px;
+		min-height: 30px;
+		padding: 5px 10px;
+		border: 1px solid #999;
+		outline: none;
+		resize: none;
+		color: #fff;
+		letter-spacing: 0.5px;
+		background-color: hsla(0, 0%, 100%, 0.2);
+		&:focus {
+			border: 2px solid #333;
+		}
+		&::placeholder {
+			color: #999;
+		}
+	}
+	&__error {
+		color: red;
+		font-weight: lighter;
+		font-size: 14px;
+	}
+}

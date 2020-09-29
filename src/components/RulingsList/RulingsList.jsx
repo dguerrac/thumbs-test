@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { rulingsList } from '../../utils/rulingsList';
+import React, { useState, useEffect, useContext } from 'react';
+//import { rulingsList } from '../../utils/rulingsList';
 import Character from '../Character/Character';
 import NotFound from '../NotFound/NotFound';
+import { StoreContext } from '../StoreProvider/StoreProvider';
 import { ToastContainer } from "react-toastify";
 import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai';
 
 import './RulingsList.scss';
 
 const RulingsList = () => {
-	const [data, setData] = useState(() =>
+  const { data } = useContext(StoreContext);
+	/*const [data, setData] = useState(() =>
       JSON.parse(localStorage.getItem('rulingsList')) || rulingsList
-    );
+    );*/
   const [filtered, setFiltered] = useState([]);
   const [query, setQuery] = useState('');
 
-  useEffect(() => {
+  /*useEffect(() => {
     localStorage.setItem('rulingsList', JSON.stringify(data))
-  }, [data]);
+  }, [data]);*/
 
   useEffect(() => {
     let temporal = data;
@@ -29,7 +31,7 @@ const RulingsList = () => {
     setFiltered(temporal);
   }, [data, query]);
 
-	const handleUpdateData = (id, thumb) => {
+	/*const handleUpdateData = (id, thumb) => {
     
     const characters = data.map(character => {
       if (character.id === id) {
@@ -40,7 +42,7 @@ const RulingsList = () => {
     });
 
     setData(characters);
-  }
+  }*/
 
   const handleCleanInput = () => query ? setQuery('') : null;
 
@@ -57,7 +59,8 @@ const RulingsList = () => {
           placeholder={'Search a person...'}
         />
         <div 
-          role={'button'} 
+          role={'button'}
+          aria-label={'search-close'}
           tabIndex={0}
           className={'rulings-list-container__search_icon'}
           onClick={handleCleanInput}
@@ -72,7 +75,7 @@ const RulingsList = () => {
         <div className={'rulings-list-container__list'}>
           {(filtered || []).map((character, index) => {
             return (
-              <Character key={index} character={character} handleUpdateData={handleUpdateData}/>
+              <Character key={index} character={character}/>
             )
           })} 
         </div>
