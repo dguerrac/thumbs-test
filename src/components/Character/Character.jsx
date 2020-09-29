@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Thumb from '../Thumb/Thumb';
 import Button from '../Button/Button';
+import { StoreContext } from '../StoreProvider/StoreProvider';
 import showNotification from '../../utils/showNotification';
 import { HiThumbUp, HiThumbDown } from 'react-icons/hi';
 
 import './Character.scss';
 
-const Character = ({character, handleUpdateData}) => {
+const Character = ({ character }) => {
+  const { handleUpdateVote } = useContext(StoreContext);
 	const { 
 		category = '', 
 		description = '',
@@ -38,11 +40,11 @@ const Character = ({character, handleUpdateData}) => {
 	const { thumbsUpPercentage, thumbsDownPercentage, totalVotes } = getPercentage(thumbsUp, thumbsDown);
 	const handleVoteClick = () => {
 		if (tab === 0 && !showThumbs) {
-			handleUpdateData(id, 'thumbsUp');
+			handleUpdateVote(id, 'thumbsUp');
 			showNotification({type: 'success', message: 'Thank you for voting!'});
 		}
 		if (tab === 1 && !showThumbs) {
-			handleUpdateData(id, 'thumbsDown');
+			handleUpdateVote(id, 'thumbsDown');
 			showNotification({type: 'success', message: 'Thank you for voting!'});	
 		}
 		setTab(-1);

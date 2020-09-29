@@ -7,8 +7,7 @@
 	padding: 30px 50px;
 	margin: 20px 0;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	@media (max-width: 1024px) {
 		width: 100%;
@@ -22,17 +21,6 @@
 		text-align: center;
 		@media (max-width: 576px) {
 			font-size: 35px;
-		}
-	}
-	&__add {
-		font-size: 30px;
-		font-weight: lighter;
-		text-align: center;
-		@media (max-width: 576px) {
-			font-size: 26px;
-		}
-		p {
-			margin-bottom: 10px;
 		}
 	}
 }
