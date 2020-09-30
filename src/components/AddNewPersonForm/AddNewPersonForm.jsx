@@ -72,7 +72,7 @@ const AddNewPersonForm = (props) => {
               name={'startDate'}
             />
             <Button
-              className={`${(!formikProps.isValid || formikProps.isSubmitting) && 'form-container__button'}`}
+              className={`${(!formikProps.isValid || formikProps.isSubmitting) ? 'form-container__button-disabled' : 'form-container__button'}`}
               type={'submit'} 
               category={'vote'}
               disabled={!formikProps.isValid || formikProps.isSubmitting}
