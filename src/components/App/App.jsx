@@ -8,8 +8,12 @@ import Layout from '../Layout/Layout';
 import UnderConstruction from '../../views/UnderConstruction/UnderConstruction';
 import Home from '../../views/Home/Home';
 import StoreProvider from '../StoreProvider/StoreProvider';
+import ReactGA from 'react-ga';
 
 import './App.scss';
+
+ReactGA.initialize('UA-179381284-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const App = () => (
   <StoreProvider>
