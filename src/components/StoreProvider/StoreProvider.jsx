@@ -12,10 +12,6 @@ const StoreProvider = ({children}) => {
     localStorage.setItem('rulingsList', JSON.stringify(data))
   }, [data]);
 
-  const [ showForm, setShowForm ] = useState(false);
-
-  const handleShowForm = () => setShowForm(!showForm);
-
   const handleUpdateVote = (id, thumb) => {
     const characters = data.map(character => {
       if (character.id === id) {
@@ -39,8 +35,6 @@ const StoreProvider = ({children}) => {
 	    	data, 
 	    	handleUpdateVote,
 	    	handleAddPerson,
-	    	showForm, 
-	    	handleShowForm,
     	}}
     >
     	{children}
