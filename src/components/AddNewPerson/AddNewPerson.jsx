@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import AddNewPersonForm from '../AddNewPersonForm/AddNewPersonForm';
 import Button from '../Button/Button';
-import { StoreContext } from '../StoreProvider/StoreProvider';
 
 import './AddNewPerson.scss';
 
 const AddNewPerson = () => {
-  const { showForm, handleShowForm } = useContext(StoreContext);
+  const [ showForm, setShowForm ] = useState(false);
+
+  const handleShowForm = () => setShowForm(!showForm);
   /*useEffect(() => {
     showForm ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = '')
   }, [showForm]);*/
@@ -20,7 +21,7 @@ const AddNewPerson = () => {
 		 			Submit a Name
 		 		</Button>
 		 	</div>
-		 	{showForm && <AddNewPersonForm/>}
+		 	{showForm && <AddNewPersonForm handleShowForm={handleShowForm}/>}
 		</section>
 	);
 }

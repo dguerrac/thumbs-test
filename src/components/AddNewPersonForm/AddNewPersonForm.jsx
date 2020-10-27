@@ -7,8 +7,8 @@ import { validationNewPerson } from '../../utils/validationSchema';
 import { AiOutlineClose } from 'react-icons/ai';
 import './AddNewPersonForm.scss';
 
-const AddNewPersonForm = (props) => {
-  const { handleShowForm, handleAddPerson } = useContext(StoreContext);
+const AddNewPersonForm = ({handleShowForm}) => {
+  const { handleAddPerson } = useContext(StoreContext);
 	const initialValues = {
 		name: '',
     category: '',

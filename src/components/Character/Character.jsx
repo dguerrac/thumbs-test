@@ -25,7 +25,7 @@ const Character = ({ character }) => {
 
 	const thumbs = [ HiThumbUp, HiThumbDown ];
 
-	const getDate = startDate => ((new Date().getMonth() + 1) - (new Date(startDate).getMonth() + 1));
+	const getDate = startDate => Math.floor(((new Date() - new Date(startDate) + 1000) / 1000) / (3600 * 24) / 30);
 
 	const getPercentage = (thumbsUp, thumbsDown) => {
 		const totalVotes = thumbsUp + thumbsDown;
