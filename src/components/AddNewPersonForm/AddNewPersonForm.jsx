@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Formik, Form } from 'formik';
 import FormControl from '../FormControl/FormControl';
 import Button from '../Button/Button';
-import { StoreContext } from '../StoreProvider/StoreProvider';
+import { useRulingsList } from '../RulingsListProvider/RulingsListProvider';
 import { validationNewPerson } from '../../utils/validationSchema';
 import { AiOutlineClose } from 'react-icons/ai';
 import './AddNewPersonForm.scss';
 
 const AddNewPersonForm = ({handleShowForm}) => {
-  const { handleAddPerson } = useContext(StoreContext);
+  const { dispatch } = useRulingsList();
 	const initialValues = {
 		name: '',
     category: '',
@@ -21,7 +21,7 @@ const AddNewPersonForm = ({handleShowForm}) => {
     onSubmitProps.setSubmitting(false);
     const upgradeValues = JSON.parse(JSON.stringify(values));
     const { name } = { ...upgradeValues };
-    handleAddPerson(upgradeValues, name);
+    dispatch({ type: 'addCharacter', upgradeValues, name });
     handleShowForm();
   }
   return (

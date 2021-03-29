@@ -1,39 +1,32 @@
-import React, { useState, useEffect, useContext } from 'react';
-//import { rulingsList } from '../../utils/rulingsList';
+import React, { useState, useEffect } from 'react';
 import Character from '../Character/Character';
 import NotFound from '../NotFound/NotFound';
-import { StoreContext } from '../StoreProvider/StoreProvider';
+import { useRulingsList } from '../RulingsListProvider/RulingsListProvider';
 import { ToastContainer } from "react-toastify";
 import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai';
 
 import './RulingsList.scss';
 
 const RulingsList = () => {
-  const { data } = useContext(StoreContext);
-	/*const [data, setData] = useState(() =>
-      JSON.parse(localStorage.getItem('rulingsList')) || rulingsList
-    );*/
+  const { state } = useRulingsList();
+  
   const [filtered, setFiltered] = useState([]);
   const [query, setQuery] = useState('');
 
-  /*useEffect(() => {
-    localStorage.setItem('rulingsList', JSON.stringify(data))
-  }, [data]);*/
-
   useEffect(() => {
-    let temporal = data;
+    let temporal = state;
     if (!!query) {
-      temporal = data.filter(person => {
+      temporal = state.filter((person) => {
         const { name } = { ...person };
         return `${name}`.toLowerCase().includes(query.toLowerCase());
     });
     }
     setFiltered(temporal);
-  }, [data, query]);
+  }, [state, query]);
 
 	/*const handleUpdateData = (id, thumb) => {
     
-    const characters = data.map(character => {
+    const characters = state.map(character => {
       if (character.id === id) {
         character[thumb] += 1;
         return character;
